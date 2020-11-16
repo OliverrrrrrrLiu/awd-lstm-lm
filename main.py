@@ -286,6 +286,8 @@ try:
                 optimizer.param_groups[0]['lr'] /= 10.
 
             best_val_loss.append(val_loss)
+        # Save model for each epoch for estimating layer-wise Lipschitz information
+        model_save(os.path.join("model", "e{}.pt".format(epoch)))
 
 except KeyboardInterrupt:
     print('-' * 89)
