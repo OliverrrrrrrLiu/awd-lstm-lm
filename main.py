@@ -144,6 +144,7 @@ if not criterion:
 ###
 if args.cuda:
     device = ":".join(["cuda", str(args.device)])
+    print("Current device:", device)
     model = model.to(device)
     criterion = criterion.to(device)
 ###
